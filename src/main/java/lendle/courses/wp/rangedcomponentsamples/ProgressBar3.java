@@ -36,6 +36,7 @@ public class ProgressBar3 {
                 int i=0;
                 for(i=0; i<=100; i++){
                     progressBar.setProgress(i);
+              
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException ex) {
@@ -44,8 +45,9 @@ public class ProgressBar3 {
                 }
             }
         };
+        t.setDaemon(true);
         t.start();
-        
+      
         frame.setVisible(true);
     }
 
