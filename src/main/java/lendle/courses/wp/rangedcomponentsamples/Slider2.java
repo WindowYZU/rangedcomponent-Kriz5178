@@ -7,6 +7,7 @@ package lendle.courses.wp.rangedcomponentsamples;
 
 import java.awt.FlowLayout;
 import java.awt.TextField;
+import javafx.scene.control.SliderBuilder;
 import javax.swing.JFrame;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
@@ -42,10 +43,16 @@ public class Slider2 {
         
         JTextField textField=new JTextField();
         textField.setColumns(20);
+        textField.setText("50");
         frame.add(textField);
         //攔截 ChangeListener
         //並將 slider.getValue() 填入 textField
-        
+        slider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                textField.setText(""+slider.getValue());
+            }
+        });
         
         ///////////////////////////////////////
         
